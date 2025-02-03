@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Button from "./Button"; // Import the Button component
 
 export default function FBC(props) {
     // Step 1: Define a state variable
@@ -8,11 +9,19 @@ export default function FBC(props) {
     const incrementCount = () => {
         setCount(count + 1);
     };  
+
+    const showAlert = () => {
+        alert("Haiii");
+    }
     return (
         <div>
         <p>This is function based component {props.value}</p>
         <p><button onClick={incrementCount}>Click</button></p>
         <h2>Counter: {count}</h2>
+        <p>
+            {/* Pass showAlert function to Button component */}
+            <Button onClick={showAlert} label="FBC Pop Up" />
+        </p>
         </div>
     );
 };
